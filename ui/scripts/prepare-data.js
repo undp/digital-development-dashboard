@@ -194,7 +194,7 @@ async function main() {
     let match = scores.find((score) => {
       return (
         score["Country Name"].toLowerCase() === country.toLowerCase() &&
-        score["Pillar"] === pillar.toLowerCase() &&
+        score["Pillar"].toLowerCase() === pillar.toLowerCase() &&
         !score["Sub-Pillar"]
       );
     });
@@ -255,7 +255,7 @@ async function main() {
 
   function getDigitalRightPillarConfidence(country, pillar) {
     let match = digital_right_scores.find((score) => {
-      return score["Country Name"] === country.toLowerCase() && score["Pillar"] === pillar.toLowerCase();
+      return score["Country Name"].toLowerCase() === country.toLowerCase() && score["Pillar"].toLowerCase() === pillar.toLowerCase();
     });
 
     return match ? match["data_availability"] : null;
